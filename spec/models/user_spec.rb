@@ -22,12 +22,6 @@ describe "Authentication" do
       FactoryGirl.build(:user).should_not be_valid
     end
 
-    it "test" do
-      user = FactoryGirl.create(:user)
-      login(user)
-    end
-
-
   end
 
 end
