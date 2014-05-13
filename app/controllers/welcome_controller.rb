@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
-  def index
-    resource_name
-  end
+  skip_before_filter :require_no_authentication
 
- 
+  def index
+  end
+  
 end
