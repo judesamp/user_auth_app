@@ -15,6 +15,7 @@
 //= require jquery.ui.all
 //= require turbolinks
 //= require welcome
+//= require dashboard
 //= require_tree .
 
 

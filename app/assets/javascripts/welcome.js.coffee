@@ -15,6 +15,7 @@ $ ->
     return
 
   $("#login_button2").on "click", ->
+    $("#my_modal").hide();
     $("#login_modal").slideToggle 800, "linear", ->
     return
 
