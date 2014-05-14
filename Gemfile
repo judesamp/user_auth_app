@@ -20,7 +20,6 @@ gem 'rails_12factor', group: :production
 
 
 group :development do
- gem 'rails_12factor'
 end
 
 group :test do
