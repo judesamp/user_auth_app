@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require turbolinks
 //= require welcome
 //= require dashboard
+//= require turbolinks
 //= require_tree .
 
 
