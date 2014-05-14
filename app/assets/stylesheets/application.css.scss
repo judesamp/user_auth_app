@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery.ui.all
  *= require_tree .
  *= require_self
  */
@@ -27,11 +28,50 @@
  }
 
  .top {
-  width:250px;
-  margin: auto
+  width:960px;
+  margin: auto;
  }
 
  .top_container {
   width: 100%;
   margin-bottom: 20px;
+ }
+
+ .title {
+  text-align: center;
+ }
+
+ .hide {
+  display: none;
+ }
+
+ .showit {
+  display: inline;
+  height: 150px;
+ }
+
+ .background_gray {
+  border: 1px solid blue;
+  background: lightgray;
+ }
+
+ .images {
+  padding: 5px;
+ }
+
+ #my_modal {
+  position: absolute;
+  top: 65px;
+ }
+
+  #login_modal {
+  position: absolute;
+  top: 65px;
+  display: none;
+ }
+
+ .next {
+  position: relative;
+  top: 45px;
+  right: 65px;
  }

@@ -1,0 +1,106 @@
+.container
+  .col-md-12
+    .title
+      %h1#test Your Images
+
+      .images.col-md-10
+        = image_tag "image_1.jpg", class: "first showit"
+        = image_tag "image_2.jpg", class: "second showit"
+        = image_tag "image_3.jpg", class: "third showit"
+        = image_tag "image_4.jpg", class: "fourth hide"
+        = image_tag "image_5.jpg", class: "fifth hide"
+        = image_tag "image_6.jpg", class: "sixth hide"
+        = image_tag "image_7.jpg", class: "seventh hide"
+      .col-md-2
+        %a.next.btn.btn-default.btn-lg Next >
+  
+.col-md-2
+  %h1 My test form
+  = form_tag root_path do
+    = label_tag :email
+    = text_field_tag :email, params[:email], id: "email_field"
+    = label_tag :something
+    = password_field_tag :password, params[:password], id: "password_field"
+    = submit_tag "Sign in", class: "btn btn-large btn-primary", id: "submit_button"
+  
+
+
+
+
+
+:javascript
+
+ 
+  $('#submit_button').on('click', function(e) {
+    if ($('#email_field').val() == ''){
+      e.preventDefault();
+      alert('You cannot leave the email field blank!');
+    } else if ($('#password_field').val() == '') {
+      e.preventDefault();
+      alert('You cannot leave the password field blank');
+    } else {
+      e.preventDefault();
+      alert('You cannot do that here. This is not a working form');
+    }
+  });
+
+
+
+   
+
+
+
+
+  $('.images').on({
+    mouseover: function() {
+      $('.images').addClass('background_gray');
+    },
+
+    mouseout: function() {
+      $('.images').removeClass('background_gray');
+    }
+
+  });
+
+  $('.next').on('click', function() {
+
+    $('.first').removeClass('showit');
+    $('.first').addClass('hide');
+
+    $('.fourth').removeClass('hide');
+    $('.fourth').addClass('showit');
+
+    $('.first').addClass('rollover');
+
+    $('.second').addClass('first');
+    $('.second').removeClass('second');
+
+    $('.third').addClass('second');
+    $('.third').removeClass('third');
+
+    $('.fourth').addClass('third');
+    $('.fourth').removeClass('fourth');
+
+    $('.fifth').addClass('fourth');
+    $('.fifth').removeClass('fifth');
+
+    $('.sixth').addClass('fifth');
+    $('.sixth').removeClass('sixth');
+
+    $('.seventh').addClass('sixth');
+    $('.seventh').removeClass('seventh');
+
+    $('.rollover').removeClass('first');
+    $('.rollover').addClass('seventh');
+    $('.rollover').removeClass('rollover');
+
+   
+  });
+
+
+
+
+  
+
+
+
