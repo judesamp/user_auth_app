@@ -24,3 +24,19 @@ $ ->
       e.preventDefault()
       alert "You cannot leave the name blank!"
     return
+
+  $(".sign_in_link").on "click", (e) ->
+    e.preventDefault()
+    $("#my_modal").hide();
+    $("#login_modal").slideToggle 800, "linear", ->
+
+  # $(".confirmation_link").on "click", (e) ->
+  #   $("#my_modal").hide();
+  #   $("#login_modal").hide();
+
+  # $(".forgot_link").on "click", (e) ->
+  #   $("#my_modal").hide();
+  #   $("#login_modal").hide();
+    
+
+    

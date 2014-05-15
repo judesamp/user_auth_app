@@ -31,6 +31,7 @@
       <% end %>
       <% if user_signed_in? %>
         <a class="btn btn-default" href="/dashboard">Your Dashboard</a>
+        <a class="btn btn-default" href="/users">All Users!</a>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "btn btn-default") %> 
           <span>logged in as <%= current_user.email %></span>
       <% end %>
@@ -49,7 +50,6 @@
   </div>
 
 
-
 <%= yield %>
 
 <% if user_signed_in? %>
@@ -63,14 +63,17 @@
   </div>
 
 <% else %>
+  
+  <% unless current_page?(:controller => 'passwords', :action => 'new') %>
 
-  <div id="my_modal" class="col-md-8 col-md-offset-2">
-    <%= render 'welcome/signup' %>
-  </div>
+    <div id="my_modal" class="col-md-8 col-md-offset-2">
+      <%= render 'welcome/signup' %>
+    </div>
 
-  <div id="login_modal" class="col-md-8 col-md-offset-2">
-    <%= render 'devise/sessions/new' %>
-  </div>
+    <div id="login_modal" class="col-md-8 col-md-offset-2">
+      <%= render 'devise/sessions/new' %>
+    </div>
+  <% end %>
 
 <% end %>
 </body>

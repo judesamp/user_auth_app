@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
 
+
+
+  match 'users/:id/destroy' => 'users#destroy', :via => :delete, :as => :custom_destroy
+  match 'users/:id/update_status' => 'users#update_status', :via => :patch, :as => :update_status
+
   devise_for :users
+  resources :users, :only => [:index]
+
+  devise_scope :user do
+    delete "/users" => "users/#destroy"
+  end
+  
+
+
+
   
   get "dashboard" => 'dashboard#index'
   # The priority is based upon order of creation: first created -> highest priority.

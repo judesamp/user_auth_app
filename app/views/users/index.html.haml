@@ -1,0 +1,23 @@
+#message.alert.alert-info
+  This is my test message
+
+%table
+  %thead
+    %th User Name
+    %th User Email
+    %th Total Sign-ins
+    %th Last Sign-ins
+    %th Active
+    %th Delete
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= user.email
+        %td= user.sign_in_count
+        %td= user.last_sign_in_at
+        %td= check_box_tag "status", "1", user.status, data: {"user_id" => user.id, "status" => user.status}
+        %td= link_to "Delete", '/', class: "btn btn-default delete_button", data: {"user_id" => user.id}
+
+
+  
