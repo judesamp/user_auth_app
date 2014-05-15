@@ -64,15 +64,13 @@
 
 <% else %>
   
+  <div id="my_modal" class="col-md-8 col-md-offset-2">
+    <%= render 'welcome/signup' %>
+  </div>
 
-    <div id="my_modal" class="col-md-8 col-md-offset-2">
-      <%= render 'welcome/signup' %>
-    </div>
-
-    <div id="login_modal" class="col-md-8 col-md-offset-2">
-      <%= render 'devise/sessions/new' %>
-    </div>
-  <% end %>
+  <div id="login_modal" class="col-md-8 col-md-offset-2">
+    <%= render 'devise/sessions/new' %>
+  </div>
 
 <% end %>
 </body>
