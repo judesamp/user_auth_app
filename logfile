@@ -3,3 +3,10 @@ LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
 ERROR:  cached plan must not change result type
 STATEMENT:  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1
+LOG:  stats collector's time 2014-05-18 08:10:22.341898-04 is later than backend local time 2014-05-18 08:10:21.137669-04
+LOG:  stats_timestamp 2014-05-18 08:10:22.341898-04 is later than collector's time 2014-05-18 08:10:21.478255-04 for db 0
+FATAL:  database "done_development" does not exist
+FATAL:  database "done_development" does not exist
+WARNING:  pgstat wait timeout
+WARNING:  pgstat wait timeout
+WARNING:  pgstat wait timeout

@@ -8,10 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.destroy
       respond_to do |format|
-        puts format.inspect
-        puts '1'
         format.js {render plain: "1"}
-         puts '2'
         format.html { redirect_to users_path }
       end
     else

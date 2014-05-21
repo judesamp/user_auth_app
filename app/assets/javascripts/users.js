@@ -12,7 +12,7 @@ $(function() {
 
       success: function(data) {
 
-        if (data == "1") {
+        if (data === "1") {
 
           $(row).hide('slow');
           $('#message').show().html('The user was deleted.').fadeOut(3000);
