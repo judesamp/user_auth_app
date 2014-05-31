@@ -10,3 +10,51 @@ FATAL:  database "done_development" does not exist
 WARNING:  pgstat wait timeout
 WARNING:  pgstat wait timeout
 WARNING:  pgstat wait timeout
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2014-05-22 14:21:36 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+WARNING:  pgstat wait timeout
+FATAL:  database "ironbase_development" does not exist
+FATAL:  database "ironbase_development" does not exist
+ERROR:  column "subject" of relation "cohorts" already exists
+STATEMENT:  ALTER TABLE "cohorts" ADD COLUMN "subject" character varying(255)
+ERROR:  column "cohort_id" of relation "enrollments" already exists
+STATEMENT:  ALTER TABLE "enrollments" ADD COLUMN "cohort_id" integer
+WARNING:  pgstat wait timeout
+ERROR:  database "ironbase_development" is being accessed by other users
+DETAIL:  There are 2 other sessions using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "ironbase_development"
+ERROR:  database "ironbase_development" already exists
+STATEMENT:  CREATE DATABASE "ironbase_development" ENCODING = 'utf8'
+ERROR:  column users.user_id does not exist at character 139
+STATEMENT:  SELECT "users".* FROM "users" INNER JOIN "enrollments" ON "users"."id" = "enrollments"."user_id" WHERE "enrollments"."cohort_id" = $1 AND "users"."user_id" = 1
+ERROR:  column users.status does not exist at character 232
+STATEMENT:  SELECT "users".* FROM "users" INNER JOIN "enrollments" "enrollments_users" ON "enrollments_users"."user_id" = "users"."id" INNER JOIN "enrollments" ON "users"."id" = "enrollments"."user_id" WHERE "enrollments"."cohort_id" = $1 AND "users"."status" = 'active'
+ERROR:  database "ironbase_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "ironbase_development"
+ERROR:  database "ironbase_development" already exists
+STATEMENT:  CREATE DATABASE "ironbase_development" ENCODING = 'utf8'
+ERROR:  database "ironbase_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "ironbase_development"
+ERROR:  database "ironbase_development" already exists
+STATEMENT:  CREATE DATABASE "ironbase_development" ENCODING = 'utf8'
+ERROR:  column enrollments.tatus does not exist at character 232
+STATEMENT:  SELECT "users".* FROM "users" INNER JOIN "enrollments" "enrollments_users" ON "enrollments_users"."user_id" = "users"."id" INNER JOIN "enrollments" ON "users"."id" = "enrollments"."user_id" WHERE "enrollments"."cohort_id" = $1 AND "enrollments"."tatus" = 'active'
+ERROR:  column enrollments.tatus does not exist at character 232
+STATEMENT:  SELECT "users".* FROM "users" INNER JOIN "enrollments" "enrollments_users" ON "enrollments_users"."user_id" = "users"."id" INNER JOIN "enrollments" ON "users"."id" = "enrollments"."user_id" WHERE "enrollments"."cohort_id" = $1 AND "enrollments"."tatus" = 'active'
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "cohorts".* FROM "cohorts"  WHERE "cohorts"."id" = $1 LIMIT 1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "users".* FROM "users" INNER JOIN "enrollments" "enrollments_users" ON "enrollments_users"."user_id" = "users"."id" INNER JOIN "enrollments" ON "users"."id" = "enrollments"."user_id" WHERE "enrollments"."cohort_id" = $1 AND "enrollments"."status" = 'active'
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "assignments".* FROM "assignments"  WHERE "assignments"."cohort_id" = $1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "assignments".* FROM "assignments"  WHERE "assignments"."cohort_id" = $1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "assignments".* FROM "assignments"  WHERE "assignments"."id" = $1 LIMIT 1
